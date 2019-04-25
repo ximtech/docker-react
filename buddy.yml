@@ -1,10 +1,14 @@
-sudo: required
-
-services:
-  - docker
-
-before_install:
-  - docker build -t stason/docker-react -f Dockerfile.dev .
-  
-script:
-  - docker run stason/docker-react npm run test -- --coverage
+  - action: "Execute: npm test"
+    type: "BUILD"
+    working_directory: "/buddy/docker-react"
+    docker_image_name: "library/node"
+    docker_image_tag: "10"
+    execute_commands:
+    - "# yarn install"
+    - "npm install"
+    - "npm test"
+    setup_commands:
+    - "npm install -g gulp grunt-cli"
+    mount_filesystem_path: "/buddy/docker-react"
+    shell: "BASH"
+    trigger_condition: "ALWAYS"
