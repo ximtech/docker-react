@@ -2,8 +2,8 @@
   trigger_mode: "ON_EVERY_PUSH"
   ref_name: "*"
   actions:
-  - action: "docker buid"
+  - action: "docker build"
     type: "DOCKERFILE"
     docker_image_name: "stason/docker-react"
     docker_image_tag: "1.0"
-    dockerfile_path: "/Dockerfile.dev"
+    dockerfile_path: "frontend/Dockerfile"
