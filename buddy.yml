@@ -1,6 +1,10 @@
-- sudo: required
-- services: docker
+sudo: required
 
-- before_install: docker build -t stason/docker-react -f Dockerfile.dev .
+services:
+  - docker
+
+before_install:
+  - docker build -t stason/docker-react -f Dockerfile.dev .
   
-- script: docker run stason/docker-react npm run test -- --coverage
+script:
+  - docker run stason/docker-react npm run test -- --coverage
