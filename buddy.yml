@@ -1,7 +1,9 @@
-sudo: "required"
-services:
-  - "docker"
-before_install:
-  - "docker build -t stason/docker-react Dockerfile.dev"
-script:
-  - "docker run stason/docker-react npm run test -- --coverage"
+- pipeline: "build docker image"
+  trigger_mode: "ON_EVERY_PUSH"
+  ref_name: "*"
+  actions:
+  - action: "docker buid"
+    type: "DOCKERFILE"
+    docker_image_name: "stason/docker-react"
+    docker_image_tag: "1.0"
+    dockerfile_path: "/Dockerfile.dev"
