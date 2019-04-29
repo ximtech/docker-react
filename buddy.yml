@@ -1,15 +1,16 @@
-- pipeline: "build docker image"
+- pipeline: "Build Docker image"
   trigger_mode: "ON_EVERY_PUSH"
   ref_name: "master"
   ref_type: "BRANCH"
   actions:
-  - action: "docker build"
+  - action: "Docker build"
     type: "DOCKERFILE"
     docker_image_tag: "latest"
     dockerfile_path: "Dockerfile.dev"
   - action: "Build application"
     type: "BUILD"
     use_image_from_action: true
-    docker_build_action_name: "stason/docker-react"
+    docker_build_action_id: 0
     execute_commands:
-    - "docker run stason/docker-react npm run test -- --coverage"
+    - "npm install"
+    - "npm run test -- --coverage"
