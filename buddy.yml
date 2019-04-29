@@ -7,4 +7,12 @@
     type: "DOCKERFILE"
     dockerfile_path: "Dockerfile.dev"
     trigger_condition: "ALWAYS"
+- action: "Run docker image"
+    type: "RUN_DOCKER_CONTAINER"
+    use_image_from_action: true
+    inline_commands: "npm run test -- --coverage"
+    mount_filesystem_disable: true
+    
+    shell: "SH"
+    trigger_condition: "ALWAYS"
 
