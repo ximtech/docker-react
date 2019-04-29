@@ -5,7 +5,7 @@
     trigger_condition: "ALWAYS"
 - action: "Build Docker image"
     type: "DOCKERFILE"
-    dockerfile_path: "/Dockerfile.dev"
+    dockerfile_path: "/Dockerfile"
     docker_image_tag: "latest"
 - action: "Run docker image"
     type: "RUN_DOCKER_CONTAINER"
@@ -14,4 +14,4 @@
     mount_filesystem_disable: true
     mount_filesystem_path: "/docker-react"
     shell: "SH"
-    
+
