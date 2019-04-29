@@ -12,5 +12,6 @@
     use_image_from_action: true
     docker_build_action_id: 0
     execute_commands:
+    - "ls"
     - "npm install"
     - "npm run test -- --coverage"
