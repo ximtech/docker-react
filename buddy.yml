@@ -1,9 +1,18 @@
-- pipeline: "build docker image"
-  trigger_mode: "ON_EVERY_PUSH"
-  ref_name: "*"
-  actions:
-  - action: "docker build"
+- pipeline: "Docker-Build"
+    trigger_mode: "ON_EVERY_PUSH"
+    ref_name: "master"
+    ref_type: "BRANCH"
+    trigger_condition: "ALWAYS"
+- action: "Build Docker image"
     type: "DOCKERFILE"
-    docker_image_name: "stason/docker-react"
-    docker_image_tag: "1.0"
-    dockerfile_path: "frontend/Dockerfile"
+    dockerfile_path: "Dockerfile.dev"
+    trigger_condition: "ALWAYS"
+- action: "Run docker image"
+    type: "RUN_DOCKER_CONTAINER"
+    use_image_from_action: true
+    inline_commands: "npm run test -- --coverage"
+    mount_filesystem_disable: true
+    mount_filesystem_path: "/buddy/docker-react"
+    shell: "SH"
+    trigger_condition: "ALWAYS" 
+
