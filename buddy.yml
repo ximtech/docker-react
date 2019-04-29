@@ -5,13 +5,13 @@
     trigger_condition: "ALWAYS"
 - action: "Build Docker image"
     type: "DOCKERFILE"
-    dockerfile_path: "/Dockerfile"
+    dockerfile_path: "/Dockerfile.dev"
     docker_image_tag: "latest"
 - action: "Run docker image"
     type: "RUN_DOCKER_CONTAINER"
     use_image_from_action: true
     inline_commands: "npm run test -- --coverage"
     mount_filesystem_disable: true
-    mount_filesystem_path: "/docker-react"
+    
     shell: "SH"
-
+    
