@@ -5,7 +5,7 @@
     trigger_condition: "ALWAYS"
 - action: "Build Docker image"
     type: "DOCKERFILE"
-    dockerfile_path: "frontend/Dockerfile.dev"
+    dockerfile_path: Dockerfile.dev
     docker_image_tag: "latest"
 - action: "Run docker image"
     type: "RUN_DOCKER_CONTAINER"
