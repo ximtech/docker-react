@@ -6,5 +6,5 @@
   - action: "docker build"
     type: "DOCKERFILE"
     docker_image_tag: "1.0"
-    dockerfile_path: "frontend/Dockerfile"
+    dockerfile_path: ""
     
