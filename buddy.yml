@@ -10,7 +10,6 @@
   - action: "Build application"
     type: "BUILD"
     use_image_from_action: true
-    docker_build_action_id: 0
+    docker_build_action_name: "stason/docker-react"
     execute_commands:
-    - "npm install"
-    - "npm run test -- --coverage"
+    - "docker run stason/docker-react npm run test -- --coverage"
