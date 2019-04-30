@@ -1,9 +1,9 @@
-- pipeline: "Build Docker image"
+- pipeline: "Build and deploy application"
   trigger_mode: "ON_EVERY_PUSH"
   ref_name: "master"
   ref_type: "BRANCH"
   actions:
-  - action: "Docker build"
+  - action: "Docker build image"
     type: "DOCKERFILE"
     docker_image_tag: "latest"
     dockerfile_path: "Dockerfile.dev"
@@ -12,6 +12,16 @@
     use_image_from_action: true
     docker_build_action_id: 0
     mount_filesystem_disable: false
-    inline_commands: "ls"
     inline_commands: "npm run test -- --coverage"
     working_directory: "/app"
+  - action: "Upload files to Elastic Beanstalk"
+    type: "ELASTIC_BEANSTALK"
+    local_path: "/"
+    application_name: "docker-react"
+    environment: "DockerReact-env"
+    version_label: "latest"
+    region: "us-west-2"
+    integration_id: 1
+    #deployment_excludes:
+    #- "/assets/"
+    #- "file.txt"
