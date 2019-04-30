@@ -16,12 +16,12 @@
     working_directory: "/app"
   - action: "Upload files to Elastic Beanstalk"
     type: "ELASTIC_BEANSTALK"
-    local_path: "/"
     application_name: "docker-react"
-    environment: "DockerReact-env"
-    version_label: "latest"
-    region: "us-west-2"
-    integration_id: 1
+    environment: "e-jmkzhjvspd"
+    environment_name: "DockerReact-env"
+    region: "us-east-2"
+    trigger_condition: "ALWAYS"
+    integration_id: 52823
     #deployment_excludes:
     #- "/assets/"
     #- "file.txt"
