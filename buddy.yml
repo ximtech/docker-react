@@ -15,8 +15,8 @@
     use_image_from_action: true
     docker_build_action_id: 0
     mount_filesystem_disable: false
-    inline_commands: "ls"
-    #inline_commands: "npm run test -- --coverage"
+    #inline_commands: "ls"
+    inline_commands: "npm run test -- --coverage"
 
   - action: "Upload files to Elastic Beanstalk"
     type: "ELASTIC_BEANSTALK"
