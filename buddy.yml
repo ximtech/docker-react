@@ -11,12 +11,12 @@
 
   - action: "Run Docker container"
     type: "RUN_DOCKER_CONTAINER"
+    working_directory: "/app"
     use_image_from_action: true
     docker_build_action_id: 0
     mount_filesystem_disable: false
     inline_commands: "ls"
     #inline_commands: "npm run test -- --coverage"
-    working_directory: "/app"
 
   - action: "Upload files to Elastic Beanstalk"
     type: "ELASTIC_BEANSTALK"
