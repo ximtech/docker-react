@@ -13,10 +13,10 @@
     type: "RUN_DOCKER_CONTAINER"
     working_directory: "/app"
     use_image_from_action: true
-    docker_build_action_id: 0
-    mount_filesystem_disable: false
-    inline_commands: "ls -al > ls"
-    #inline_commands: "npm run test -- --coverage"
+    mount_filesystem_disable: true
+    inline_commands: "npm run test -- --coverage"
+    mount_filesystem_path: "/buddy/docker-react"
+    shell: "SH"
 
   - action: "Upload files to Elastic Beanstalk"
     type: "ELASTIC_BEANSTALK"
