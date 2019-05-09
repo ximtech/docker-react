@@ -1,0 +1,19 @@
+total 998
+drwxr-xr-x 1 User 197121      0 May  9 13:42 ./
+drwxr-xr-x 1 User 197121      0 Apr 16 18:12 ../
+-rw-r--r-- 1 User 197121     24 Apr 17 17:18 .env
+drwxr-xr-x 1 User 197121      0 May  9 13:36 .git/
+-rw-r--r-- 1 User 197121    310 Oct 26  1985 .gitignore
+-rw-r--r-- 1 User 197121    887 May  9 13:36 buddy.yml
+drwxr-xr-x 1 User 197121      0 Apr 16 18:39 build/
+-rw-r--r-- 1 User 197121    353 Apr 17 19:14 docker-compose.yml
+-rw-r--r-- 1 User 197121    190 May  7 19:40 Dockerfile
+-rw-r--r-- 1 User 197121    117 May  7 20:34 Dockerfile.dev
+-rw-r--r-- 1 User 197121      0 May  9 13:42 ls
+-rw-r--r-- 1 User 197121      0 May  9 13:42 ls.log
+drwxr-xr-x 1 User 197121      0 Apr 18 09:55 node_modules/
+-rw-r--r-- 1 User 197121    481 Apr 17 16:00 package.json
+-rw-r--r-- 1 User 197121 659222 Apr 17 16:33 package-lock.json
+drwxr-xr-x 1 User 197121      0 Apr 16 18:13 public/
+-rw-r--r-- 1 User 197121   2881 Oct 26  1985 README.md
+drwxr-xr-x 1 User 197121      0 Apr 17 17:18 src/
