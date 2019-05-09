@@ -8,6 +8,7 @@
     type: "DOCKERFILE"
     docker_image_tag: "latest"
     dockerfile_path: "Dockerfile"
+    do_not_prune_images: true
 
   - action: "Run Docker container"
     type: "RUN_DOCKER_CONTAINER"
