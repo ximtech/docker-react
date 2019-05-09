@@ -15,7 +15,8 @@
     working_directory: "/app"
     use_image_from_action: true
     mount_filesystem_disable: true
-    inline_commands: "npm run test -- --coverage"
+    inline_commands: "ls"
+    #inline_commands: "npm run test -- --coverage"
     mount_filesystem_path: "/buddy/docker-react"
     shell: "SH"
 
