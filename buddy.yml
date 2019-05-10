@@ -11,6 +11,7 @@
 
   - action: "Run Docker container"
     type: "RUN_DOCKER_CONTAINER"
+    docker_image_tag: "latest"
     working_directory: "/app"
     use_image_from_action: true
     mount_filesystem_disable: false
