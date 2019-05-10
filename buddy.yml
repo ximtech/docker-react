@@ -7,6 +7,8 @@
   - action: "Docker build image"
     type: "DOCKERFILE"
     dockerfile_path: "Dockerfile"
+    docker_image_name: "stason/docker-react"
+    docker_image_tag: "latest"
     do_not_prune_images: false
 
   - action: "Run Docker container"
@@ -14,10 +16,10 @@
     docker_image_tag: "latest"
     working_directory: "/app"
     use_image_from_action: true
-    mount_filesystem_disable: false
-    inline_commands: "ls"
-    #inline_commands: "npm run test -- --coverage"
-    mount_filesystem_path: "/buddy/docker-react"
+    mount_filesystem_disable: true
+    #inline_commands: "ls"
+    inline_commands: "npm run test -- --coverage"
+    #mount_filesystem_path: "/buddy/docker-react"
     shell: "SH"
 
   - action: "Upload files to Elastic Beanstalk"
