@@ -4,7 +4,7 @@
   ref_type: "BRANCH"
   actions:
 
-  - action: "Docker build image"
+  - action: "Docker build application image"
     type: "DOCKERFILE"
     dockerfile_path: "Dockerfile.dev"
     docker_image_tag: "1.0"
